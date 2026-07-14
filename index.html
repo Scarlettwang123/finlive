@@ -1,21 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Trae Project</title>
-    <script type="module">
-      if (import.meta.hot?.on) {
-        import.meta.hot.on('vite:error', (error) => {
-          if (error.err) {
-            console.error(
-              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
-            )
-          }
-        })
+    <title>FinLive 金融智答系统 - AI预生成+专家秒级验证</title>
+    <style>
+      #root:empty::after {
+        content: "";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        border: 3px solid rgba(212, 175, 55, 0.2);
+        border-top-color: #D4AF37;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
       }
-    </script>
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      body { margin: 0; background: #060E1A; }
+    </style>
   </head>
   <body>
     <div id="root"></div>

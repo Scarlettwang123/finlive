@@ -6,7 +6,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   base: '/finlive/',
   build: {
-    sourcemap: 'hidden',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'icons': ['lucide-react'],
+        },
+      },
+    },
   },
   plugins: [
     react({

@@ -43,8 +43,8 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Noto Serif SC"', '"Source Han Serif SC"', '"Songti SC"', "serif"],
-        sans: ['"Inter"', '"PingFang SC"', '"Microsoft YaHei"', "sans-serif"],
+        serif: ['"Songti SC"', '"SimSun"', '"Noto Serif SC"', "serif"],
+        sans: ['"PingFang SC"', '"Microsoft YaHei"', "-apple-system", "sans-serif"],
       },
       animation: {
         "fade-in-up": "fadeInUp 0.8s ease-out forwards",
