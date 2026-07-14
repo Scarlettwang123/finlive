@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const apiBaseUrl = process.env.VUE_APP_API_URL || '/api'
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: apiBaseUrl,
   timeout: 10000
 })
 

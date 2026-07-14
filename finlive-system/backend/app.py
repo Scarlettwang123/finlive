@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 from config import Config
 from models import db
@@ -6,9 +6,10 @@ from api.auth import auth_bp
 from api.question import question_bp
 from api.user import user_bp
 from werkzeug.security import generate_password_hash
+import os
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
     app.config.from_object(Config)
     
     CORS(app, resources={r'/*': {'origins': '*'}})
@@ -21,7 +22,11 @@ def create_app():
     
     @app.route('/')
     def index():
-        return {'message': 'FinLive 金融智答系统 API'}
+        return send_from_directory('../frontend/dist', 'index.html')
+    
+    @app.errorhandler(404)
+    def not_found(e):
+        return send_from_directory('../frontend/dist', 'index.html')
     
     return app
 
